@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Michi</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">
+	<link href="css/icomoon.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/tablero.css">
+	<link rel="stylesheet" type="text/css" href="css/navegador.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse header" role="navigation" style="background-color: transparent; border-color: transparent; color: white">
+  <div id="navbar-header" class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar" ></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse" >
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">INICIO</a></li>
+      <li><a href="#">HISTORIAL</a></li>
+    </ul>
+  </div>
+</nav>
+	<div class="container-fluid">
+	<h2 class="text-center">Turno de Jugador</h2>
+		<div id="tablero" class="tablero">
+			<div class="row">
+				<div class="col-md-9 col-xs-12">
+					<div class="" style="background: url('img/hoja.png') no-repeat center; padding: 7%">
+					<div class="row">
+						<div class="col-md-offset-2 col-md-3 col-xs-offset-2 col-xs-3" style="border-right: 5px solid black; border-bottom: 5px solid black ">
+							<img src="img/x.png">
+						</div>
+						<div class="col-md-3 col-xs-3" style="border-right: 5px solid black; border-bottom:  5px solid black">
+							<img src="img/cero.gif">
+						</div>
+						<div class="col-md-3 col-xs-3"  style="border-right: 5px solid rgba(255,208,132,0.0); border-bottom:  5px solid black">
+							<img src="img/x.png">
+						</div>
+					</div>
+						<div class="row">
+						<div class="col-md-offset-2 col-md-3 col-xs-offset-2 col-xs-3" style="border-right: 5px solid black; border-bottom:  5px solid black ">
+							<img src="img/cero.gif">
+						</div>
+						<div class="col-md-3 col-xs-3" style="border-right: 5px solid black; border-bottom:  5px solid black ">
+							<img src="img/cero.gif">
+						</div>
+						<div class="col-md-3 col-xs-3" style="border-right: 5px solid rgba(255,208,132,0.0); border-bottom:  5px solid black">
+							<img src="img/cero.gif">
+						</div>
+					</div>
+						<div class="row">
+						<div class="col-md-offset-2 col-md-3 col-xs-offset-2 col-xs-3" style="border-right: 5px solid black">
+							<img src="img/cero.gif">
+						</div>
+						<div class="col-md-3 col-xs-3" style="border-right: 5px solid black">
+							<img src="img/cero.gif">
+						</div>
+						<div class="col-md-3 col-xs-3">
+							<img src="img/cero.gif">
+						</div>
+					</div>
+					</div>
+				<div>
+			</div>
+	</div>
+	<div class="col-md-3 col-xs-12 infoTablero">
+		<div class="col-md-9 col-xs-9">
+			<p id="jugador"> Movimientos de Gabrielita: </p>
+			<p id="jugador"> Movimientos de Nataly: </p>
+		</div>
+		<div class="col-md-3 col-xs-3">
+			<p id="movimiento1">4</p>
+			<p id="movimiento2">6</p>
+		</div>
+	</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--<script type="text/javascript" src="js/main.js"></script>-->
+</html>
