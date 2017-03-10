@@ -1,0 +1,45 @@
+body
+{
+	background: url('../img/fondo2.jpg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+}
+h1 {
+  margin-top: 15%;
+  font-size: 5em;
+  color: white; 
+  background-color: rgba(5,78,193,0.3);
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+#comenzar{
+	margin-top: 20%;
+	background-color: #32bb15;
+}
+#comenzar:hover{
+	background-color: #a7ee2c;
+}
+@media (max-width:768px){
+  h1 {
+  margin-top: 30%;
+  margin-bottom: 20%;
+  font-size: 45px;
+
+
+	}
+  #comenzar{
+	margin-top: 60%;
+	}
+
+}

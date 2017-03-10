@@ -1,0 +1,38 @@
+*{
+}
+body
+{
+	background: url('../img/fondo2.jpg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+}
+.formulario{
+	margin-top: 20%;
+	padding: 60px;
+	background-color: rgba(5,78,193,0.3);
+	border-radius: 15px;
+}
+.form-group input{
+	border-color: white;
+	color: white;
+}
+.form-group label{
+	color: white;
+}
+.form-control:focus {
+	border-color: #5cb85c;
+	box-shadow: inset 0 1px 1px rgba(92, 184, 92, 0.075), 0 0 8px rgba(92, 184, 92, 0.075);
+}
+.formulario h4{
+	color: white;
+	padding-top: -20px;
+}
+.btn:focus {
+	border-color: #5cb85c;
+	box-shadow: inset 0 1px 1px rgba(92, 184, 92, 0.075), 0 0 8px rgba(92, 184, 92, 0.075);
+}
+.radio label{
+	color: white;
+}
