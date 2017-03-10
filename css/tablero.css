@@ -1,6 +1,5 @@
 *{
 	box-sizing: border-box;
-	outline: 1px solid green;
 }
 body
 {
@@ -14,6 +13,7 @@ body
 	background-size: cover;
 	background-attachment: fixed;
 	background-size: cover;
+	padding: 0 8%;
 	}
 .hoja{
 	position: absolute;
@@ -21,7 +21,7 @@ body
 	width: 90%;
 }
 img{
-	width: 85%;
+	width: 100%;
 }
 h2{
 	color: white;
@@ -41,13 +41,20 @@ h2{
   #movimiento1,#movimiento2{
   	font-size: 13px;
   }
-  .infoTablero{
-  	margin-top: 18px;
-  }
   img{
   	width: 100%;
   }
+  .col-md-3 {
+    padding: 0px !important;
+}
 }
 .infoTablero{
 	margin-top: 14%;
+}
+
+@media(min-width: 1024px){
+	.col-md-3 {
+    padding: 0px !important;
+    width: 25%;
+}
 }
