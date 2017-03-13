@@ -9,10 +9,13 @@ body
 	position: relative;
 }
 .formulario{
-	margin-top: 20%;
+	margin-top: 3%;
 	padding: 60px;
 	background-color: rgba(5,78,193,0.3);
 	border-radius: 15px;
+}
+.form-group{
+	margin-top: 18%;
 }
 .form-group input{
 	border-color: white;
@@ -42,5 +45,19 @@ body
 
 }
 #login:hover{
+	background-color: #32bb15;
+}
+#computadora{
+	background-color: #a7ee2c;
+
+}
+#computadora:hover{
+	background-color: #32bb15;
+}
+#otroJugador{
+	background-color: #a7ee2c;
+
+}
+#otroJugador:hover{
 	background-color: #32bb15;
 }

@@ -37,16 +37,26 @@
 	<div class="row">
 			<div class="col-md-4 col-md-offset-4">
 				<div class="formulario" id="formulario">
-					<div class="form-group">
-					  <h4 class="text-center animated pulse infinite">Completa los Nombres para empezar!</h4>
+				  <h4 class="text-center animated pulse infinite">Elige un tipo de Juego para empezar!</h4>
+			  <div class="form-group">	
 	          <label for="username" class="control-label">Nombre del Jugador 1</label>
-	          <input type="text" style="background-color:transparent; " class="form-control" id="nombre1" name="nombre1" value="" required="" placeholder="Ingresa tu nombre">
-	        </div>
-	        <div class="form-group">
+	          <input type="text" style="background-color:transparent; " class="form-control" id="nombre1" name="nombre1" value="" required="" placeholder="Ingresa tu nombre" disabled="true">
+	           <div class="form-group" id="jugador2" style="display: none">
 	          <label for="password" class="control-label">Nombre del Jugador 2</label>
 	          <input type="text" style="background-color:transparent; " class="form-control" id="nombre2" name="nombre2" placeholder="Ingresa tu nombre">
 	        </div>
-	        <button type="submit" class="btn btn-success btn-block" id="login">Comenzar</button>
+	          
+	          <div class="form-group" id="botones">
+	          <h3 class="text-center" style="color: white">vs</h3> 
+	          <div class="col-md-6">
+	           <button type="submit" class="btn btn-success btn-block" id="otroJugador">Otro Jugador</button>
+	           </div>
+	            <div class="col-md-6">
+	           <button type="submit" class="btn btn-success btn-block" id="computadora">PC</button>
+	             </div>
+			</div>
+	        </div>
+	        <button type="submit" class="btn btn-success btn-block" id="login" style="display: none">Comenzar</button>
 				</div>
 			</div>
 	</div>
