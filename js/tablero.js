@@ -4,6 +4,19 @@ $('#inicio').click(function(){
 $('#historial').click(function(){
 	window.location= "historial.html"
 })
+$('#enviarHistorial').click(enviarHistorial);
+
+function enviarHistorial(_ganador,_perdedor,_numJugadas){
+	$.ajax({
+		url:'http://test-ta.herokuapp.com/games',
+		type:'POST',
+		data:{
+			game:
+			{ winner_player:_ganador, loser_player:_perdedor, number_of_turns_to_win:_numJugadas }}
+	}).success(function(_data){
+		
+	});
+}
 $('#0').click(DrawMovimiento);
 $('#1').click(DrawMovimiento);
 $('#2').click(DrawMovimiento);
@@ -21,7 +34,7 @@ function getObjectLocalStorage(key) {
     return JSON.parse(value);
 }
 
-var ganadoras = [ [0, 1, 2], [3, 4, 5] , [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8]];
+var ganadoras = [ [0, 1, 2], [3, 4, 5] , [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8],[2, 4, 6]];
 var celdas=[0,0,0,0,0,0,0,0,0];
 var numJugadas= 9;
 var jugador1='a';
@@ -40,6 +53,7 @@ function init(){
 	$('#movimiento2').html(numJugadasB);
 	$('.nombA').html('Movimientos de: '+ nombreJugadorA);
 	$('.nombB').html('Movimientos de: '+ nombreJugadorB);
+
 }
 function ModoJuego(){
 
@@ -79,7 +93,9 @@ function marcar(posicion)
 			$('#movimiento1').html(numJugadasA);
 			setTimeout(function(){
 				if(comprobarGanador(jugador1)){
-					alert('gano jugador1');
+					//alert('gano jugador1');
+					$('#ganador').html('Ganó '+nombreJugadorA+' !!!');
+					enviarHistorial(nombreJugadorA,nombreJugadorB,numJugadasA);
 				} else {
 					if(jugarMaquina){
 						$('#turno').html('Turno de ' +nombreJugadorA);
@@ -92,10 +108,14 @@ function marcar(posicion)
 							numJugadasB+=1;
 							$('#movimiento2').html(numJugadasB);
 							if(comprobarGanador(jugador2)){
-								alert('gano jugador2');
+								//alert('gano jugador2');
+								$('#ganador').html('Ganó '+nombreJugadorB+' !!!');
+								enviarHistorial(nombreJugadorB,nombreJugadorA,numJugadasB);
 							}
 						} else {
 							alert("empate");
+							$('#ganador').html('Empate!!!');
+							enviarHistorial("",nombreJugadorA+'_'+nombreJugadorB,numJugadasA);
 						}
 					}
 				}
@@ -116,7 +136,9 @@ function marcar(posicion)
 			numJugadasB+=1;
 			$('#movimiento2').html(numJugadasB);
 			if(comprobarGanador(jugador2)){
-				alert('gano jugador2');
+				//alert('gano jugador2');
+				$('#ganador').html('Ganó '+nombreJugadorB+' !!!');
+				enviarHistorial(nombreJugadorB,nombreJugadorA,numJugadasB);
 			}
 		}
 		else
