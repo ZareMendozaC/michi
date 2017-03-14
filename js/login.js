@@ -42,3 +42,6 @@ $('#login').click(function(){
 $('#inicio').click(function(){
 	window.location= "index.html"
 })
+$('#historial').click(function(){
+  window.location= "historial.html"
+})

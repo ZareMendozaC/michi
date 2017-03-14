@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Michi</title>
+	<title>Historial</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500" media="all">
@@ -15,7 +15,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="init()">
 <nav class="navbar navbar-inverse header" role="navigation" style="background-color: transparent; border-color: transparent; color: white">
   <div id="navbar-header" class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -29,14 +29,29 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse" >
     <ul class="nav navbar-nav navbar-right">
       <li><a id="inicio" href="#">INICIO</a></li>
-      <li><a id="hitorial" href="#">HISTORIAL</a></li>
+      <li><a id="historial" href="#">HISTORIAL</a></li>
     </ul>
   </div>
 </nav>
-	<div class="container-fluid juego">
-	holiiii
+	<div class="container-fluid">
+		<h1 class="text-center" style="color: white">Historial</h1>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4 col-xs-12">
+			<ul id="lista-juegos" style="display: block">
+			</ul>
+			<ul id="lista-comentarios" style="display: none">
+			</ul>
+			<div class="form-group" id="comentar"  style="display: none">	
+	        <label for="username" class="control-label">Nombre: </label>
+	        <input type="text" style="background-color:transparent; " class="form-control" id="nombre" name="nombre1" value="" required="" placeholder="Ingresa tu nombre">
+	        <textarea id="content" class="form-control" rows="3"></textarea>
+	        <button id="btnEnviar" class="btn btn-mg">enviar</button>
+			</div>
+		</div>
+		</div>
 	</div>
+
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/tablero.js"></script>
+<script type="text/javascript" src="js/historial.js"></script>
 </html>

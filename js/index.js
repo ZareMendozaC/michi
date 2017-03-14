@@ -44,3 +44,6 @@ document.addEventListener('DOMContentLoaded',function(event){
 $('#comenzar').click(function(){
   window.location= "login.html";
 });
+$('#historial').click(function(){
+  window.location= "historial.html"
+})

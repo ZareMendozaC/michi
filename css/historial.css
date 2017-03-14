@@ -1,8 +1,73 @@
+*{
+	
+}
 body
 {
-	background: url('../img/tablero.jpg') no-repeat center;
+	background: url('../img/historial.png') no-repeat center;
 	background-size: cover;
 	background-attachment: fixed;
 	background-size: cover;
 	position: relative;
+}
+
+#lista-juegos{  
+margin:0;  
+padding:0;  
+list-style-type:none;  
+}  
+#lista-juegos li{
+	list-style: none;
+	color: white;
+	background-color: rgba(34,96,153,0.7);
+	padding: 20px;
+	margin-bottom: 10px;
+	border: 2px solid #4e9436;
+	border-radius: 7px;
+}
+#ver{
+	background-color: #32bb15;
+	margin-right: -10px;
+}
+#ver:hover{
+	background-color: #a7ee2c;
+	color: white;
+}
+#lista-comentarios{  
+margin:0;  
+padding:0;  
+list-style-type:none;  
+}  
+#lista-comentarios li{
+	list-style: none;
+	color: white;
+	background-color: rgba(34,96,153,0.7);
+	padding: 20px;
+	margin-bottom: 10px;
+	border: 2px solid #4e9436;
+	border-radius: 7px;
+}
+#btnEnviar{
+	background-color: #32bb15;
+	color: white;
+	margin-top: 5%;
+}
+#btnEnviar:hover{
+	background-color: #a7ee2c;
+	color: white;
+}
+.control-label{
+	color: white;
+}
+textarea{
+	margin-top: 5%;
+}
+.form-group{
+	background-color: rgba(34,96,153,0.9);
+	padding: 10%;
+	border: solid 2px #4e9436;
+	border-radius: 10px;
+}
+.form-group input{
+	border-color: white;
+	color: white;
 }

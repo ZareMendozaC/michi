@@ -1,6 +1,9 @@
 $('#inicio').click(function(){
 	window.location= "index.html"
 })
+$('#historial').click(function(){
+	window.location= "historial.html"
+})
 $('#0').click(DrawMovimiento);
 $('#1').click(DrawMovimiento);
 $('#2').click(DrawMovimiento);
@@ -37,7 +40,6 @@ function init(){
 	$('#movimiento2').html(numJugadasB);
 	$('.nombA').html('Movimientos de: '+ nombreJugadorA);
 	$('.nombB').html('Movimientos de: '+ nombreJugadorB);
-
 }
 function ModoJuego(){
 
