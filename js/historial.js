@@ -75,7 +75,7 @@ function dibujarComentarios(_datos){
 
 function enviarComentario(_idGame, _name, _content){
 	$.ajax({
-		url:'http://test-ta.herokuapp.com/games/'+_idGame+'/comments',
+		url:'https://test-ta.herokuapp.com/games/'+_idGame+'/comments',
 		type:'POST',
 		data:{comment:{ name:_name, content:_content, game_id:_idGame }}
 	}).success(function(_data){
