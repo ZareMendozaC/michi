@@ -38,5 +38,7 @@ $('#login').click(function(){
 	}
   	window.location= "tablero.html";
 });
-// validación del formulario
 
+$('#inicio').click(function(){
+	window.location= "index.html"
+})

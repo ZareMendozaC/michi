@@ -1,0 +1,8 @@
+body
+{
+	background: url('../img/tablero.jpg') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+}

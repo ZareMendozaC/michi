@@ -1,3 +1,6 @@
+$('#inicio').click(function(){
+	window.location= "index.html"
+})
 $('#0').click(DrawMovimiento);
 $('#1').click(DrawMovimiento);
 $('#2').click(DrawMovimiento);
