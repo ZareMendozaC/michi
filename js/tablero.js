@@ -23,12 +23,23 @@ var jugador2='b';
 var turnA = true;
 var jugarMaquina = false;
 var modoJuego= localStorage.getItem("jugadorB");
-ModoJuego();
+var nombreJugadorA= localStorage.getItem("jugadorA");
+var nombreJugadorB= localStorage.getItem("jugadorB");
+var numJugadasA=0;
+var numJugadasB=0;
+function init(){
+	ModoJuego();
+	$('#turno').html('Turno de ' +nombreJugadorA);
+	$('#movimiento1').html(numJugadasA);
+	$('#movimiento2').html(numJugadasB);
+	$('.nombA').html('Movimientos de: '+ nombreJugadorA);
+	$('.nombB').html('Movimientos de: '+ nombreJugadorB);
 
+}
 function ModoJuego(){
+
 	if(modoJuego=='maquina')
 	{
-		alert(modoJuego);
 		jugarMaquina=true;
 	}
 	else
@@ -36,8 +47,6 @@ function ModoJuego(){
 		jugarMaquina=false;
 	}
 }
-
-
 function DrawMovimiento(){
 	posicion=this.id;
 	marcar(posicion);
@@ -54,25 +63,29 @@ function marcar(posicion)
 {
 	if(turnA)
 	{
+		$('#turno').html('Turno de ' +nombreJugadorB);
 		console.log(1);
 		if(estaMarcado(posicion)==false)
 		{
 			celdas[posicion] = jugador1;
 			$('#'+posicion).find('img').remove();
 			$('#'+posicion).append('<img class= "animated bounce" src="img/star.png"/>');
-
+			numJugadasA+=1;
+			$('#movimiento1').html(numJugadasA);
 			setTimeout(function(){
 				if(comprobarGanador(jugador1)){
 					alert('gano jugador1');
 				} else {
 					if(jugarMaquina){
-
+						$('#turno').html('Turno de ' +nombreJugadorA);
 						if(celdas.indexOf(0) != -1) {
 
 							var posMaquina = jugadaAleatoria();
 							celdas[posMaquina] = jugador2;
 							$('#'+posMaquina).find('img').remove();
 							$('#'+posMaquina).append('<img class= "animated bounce" src="img/flor.png"/>');
+							numJugadasB+=1;
+							$('#movimiento2').html(numJugadasB);
 							if(comprobarGanador(jugador2)){
 								alert('gano jugador2');
 							}
@@ -81,7 +94,7 @@ function marcar(posicion)
 						}
 					}
 				}
-			},500);
+			},800);
 		}
 		else
 		{
@@ -89,11 +102,14 @@ function marcar(posicion)
 		}
 	}else{
 		console.log(2);
+		$('#turno').html('Turno de ' +nombreJugadorA);
 		if(estaMarcado(posicion)==false)
 		{
 			celdas[posicion] = jugador2;
 			$('#'+posicion).find('img').remove();
 			$('#'+posicion).append('<img class= "animated bounce" src="img/flor.png"/>');
+			numJugadasB+=1;
+			$('#movimiento2').html(numJugadasB);
 			if(comprobarGanador(jugador2)){
 				alert('gano jugador2');
 			}

@@ -15,7 +15,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="init()">
 <nav class="navbar navbar-inverse header" role="navigation" style="background-color: transparent; border-color: transparent; color: white">
   <div id="navbar-header" class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -34,7 +34,7 @@
   </div>
 </nav>
 	<div class="container-fluid juego">
-	<h2 class="text-center animated bounce">Turno de Jugador</h2>
+	<h2 class="text-center animated bounce" id="turno">Turno de Jugador</h2>
 		<div id="tablero" class="tablero">
 			<div class="row">
 				<div class="col-md-9 col-xs-12">
@@ -78,8 +78,8 @@
 	</div>
 	<div class="col-md-3 col-xs-12 infoTablero">
 		<div class="col-md-10 col-xs-9">
-			<p id="jugador"> Movimientos de Gaby: </p>
-			<p id="jugador"> Movimientos de Nataly: </p>
+			<p class="nombA" id="jugador"> Movimientos de Gaby: </p>
+			<p class="nombB" id="jugador"> Movimientos de Nataly: </p>
 		</div>
 		<div class="col-md-2 col-xs-3">
 			<p id="movimiento1">4</p>
