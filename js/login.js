@@ -1,4 +1,5 @@
 $('#otroJugador').click(function(){
+	$('#jugador1').css("display","block");
 	$('#jugador2').css("display","block");
 	$('#botones').css("display","none");
 	$('#login').css("display","block");
@@ -6,6 +7,7 @@ $('#otroJugador').click(function(){
 	$('#nombre1').focus();
 })
 $('#computadora').click(function(){
+	$('#jugador1').css("display","block");
 	$('#botones').css("display","none");
 	$('#login').css("display","block");
 	$('#nombre1').removeAttr('disabled');
