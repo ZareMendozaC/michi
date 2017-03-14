@@ -14,7 +14,7 @@ function enviarHistorial(_ganador,_perdedor,_numJugadas){
 			game:
 			{ winner_player:_ganador, loser_player:_perdedor, number_of_turns_to_win:_numJugadas }}
 	}).success(function(_data){
-		
+
 	});
 }
 $('#0').click(DrawMovimiento);
@@ -113,9 +113,8 @@ function marcar(posicion)
 								enviarHistorial(nombreJugadorB,nombreJugadorA,numJugadasB);
 							}
 						} else {
-							alert("empate");
 							$('#ganador').html('Empate!!!');
-							enviarHistorial("",nombreJugadorA+'_'+nombreJugadorB,numJugadasA);
+							enviarHistorial("null",nombreJugadorA+' y '+nombreJugadorB,numJugadasA);
 						}
 					}
 				}
@@ -148,6 +147,11 @@ function marcar(posicion)
 	}
 	if(!jugarMaquina){
 		turnA = !turnA;
+		if(celdas.indexOf(0) == -1) {
+			//alert("empate!!!");
+			$('#ganador').html('Empate!!!!');
+			enviarHistorial("null",nombreJugadorA+' y '+nombreJugadorB,numJugadasA);
+		}
 	}
 }
 

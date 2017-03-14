@@ -41,7 +41,13 @@ function dibujarHistorial(_datos)
 	var lista= $('#lista-juegos');
 	for( var i in _datos)
 	{
+		if(_datos[i].winner_player=="null")
+		{
+		 lista.append('<li data-idgame='+_datos[i].id+'>'+_datos[i].loser_player+' empataron '+'<button id="ver" class="btn btn-xs pull-right">Comentar</button></li>');
+		}
+		else{
 		lista.append('<li data-idgame='+_datos[i].id+'>'+_datos[i].winner_player+' le ganó a '+_datos[i].loser_player+' en '+_datos[i].number_of_turns_to_win+' movimientos'+'<button id="ver" class="btn btn-xs pull-right">Comentar</button></li>');
+		}
 	}
 }
 function getSingleGame(_idGame){
