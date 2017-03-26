@@ -5,6 +5,7 @@ $('#otroJugador').click(function(){
 	$('#login').css("display","block");
 	$('#nombre1').removeAttr('disabled');
 	$('#nombre1').focus();
+	localStorage.setItem('tipo','vs');
 })
 $('#computadora').click(function(){
 	$('#jugador1').css("display","block");
@@ -12,6 +13,7 @@ $('#computadora').click(function(){
 	$('#login').css("display","block");
 	$('#nombre1').removeAttr('disabled');
 	$('#nombre1').focus();
+	localStorage.setItem('tipo','computadora');
 })
 
 function setObjectLocalStorage(key, value) {
@@ -25,6 +27,54 @@ function getObjectLocalStorage(key) {
 $('#login').click(function(){
   	var jugadorA= $('#nombre1').val();
 	var jugadorB= $('#nombre2').val();
+	var tipoJuego= localStorage.getItem('tipo');
+
+
+	var isvalidVs= true;
+	var isvalidPc= true;
+	if(tipoJuego=='vs')
+	{
+		if(jugadorA=='')
+			{
+			isvalidVs= false;
+			$('#nombre1').addClass('animated pulse');
+			swal("Atención!", "Por favor ingrese el nombre del jugador1", "error");
+
+		}
+		if (jugadorB=='') {
+			isvalidVs= false;
+			$('#nombre2').addClass('animated pulse');
+			swal("Atención!", "Por favor ingrese el nombre del jugador2", "error");
+		}
+		else{
+			if (isvalidVs) 
+			{
+				setObjectLocalStorage('jugadorA',jugadorA);
+				setObjectLocalStorage('jugadorB',jugadorB);
+				window.location= "tablero.html";
+			}
+		}
+	}
+	else
+	{
+		if(jugadorA=='')
+			{
+			isvalidPc=false;
+			$('#nombre1').addClass('animated pulse');
+			swal("Atención!", "Por favor ingrese el nombre del jugador1", "error");
+		}
+		else{
+			if (isvalidPc) {
+				localStorage.setItem('jugadorB','maquina');
+				setObjectLocalStorage('jugadorA',jugadorA);
+				window.location= "tablero.html";
+			}
+		}
+	}
+
+
+
+/*
 
 	setObjectLocalStorage('jugadorA',jugadorA);
 	if(jugadorB=="")
@@ -36,7 +86,7 @@ $('#login').click(function(){
 	{
 	setObjectLocalStorage('jugadorB',jugadorB);
 	}
-  	window.location= "tablero.html";
+  	window.location= "tablero.html";*/
 });
 
 $('#inicio').click(function(){

@@ -95,6 +95,7 @@ function marcar(posicion)
 				if(comprobarGanador(jugador1)){
 					//alert('gano jugador1');
 					$('#ganador').html('Ganó '+nombreJugadorA+' !!!');
+					swal("Gannador!!!", 'Ganó '+nombreJugadorA+' !!!', "info");
 					enviarHistorial(nombreJugadorA,nombreJugadorB,numJugadasA);
 				} else {
 					if(jugarMaquina){
@@ -110,10 +111,12 @@ function marcar(posicion)
 							if(comprobarGanador(jugador2)){
 								//alert('gano jugador2');
 								$('#ganador').html('Ganó '+nombreJugadorB+' !!!');
+								swal("Gannador!!!", 'Ganó '+nombreJugadorB+' !!!', "info");
 								enviarHistorial(nombreJugadorB,nombreJugadorA,numJugadasB);
 							}
 						} else {
 							$('#ganador').html('Empate!!!');
+							swal("Empate!!!", 'esto fue un empate', "warning");
 							enviarHistorial("null",nombreJugadorA+' y '+nombreJugadorB,numJugadasA);
 						}
 					}
@@ -125,7 +128,6 @@ function marcar(posicion)
 			alert("esa posición ya esta marcada!");
 		}
 	}else{
-		console.log(2);
 		$('#turno').html('Turno de ' +nombreJugadorA);
 		if(estaMarcado(posicion)==false)
 		{
@@ -137,6 +139,7 @@ function marcar(posicion)
 			if(comprobarGanador(jugador2)){
 				//alert('gano jugador2');
 				$('#ganador').html('Ganó '+nombreJugadorB+' !!!');
+				swal("Gannador!!!", 'Ganó '+nombreJugadorB+' !!!', "info");
 				enviarHistorial(nombreJugadorB,nombreJugadorA,numJugadasB);
 			}
 		}
@@ -150,6 +153,7 @@ function marcar(posicion)
 		if(celdas.indexOf(0) == -1) {
 			//alert("empate!!!");
 			$('#ganador').html('Empate!!!!');
+			swal("Empate!!!", 'esto fue un empate', "warning");
 			enviarHistorial("null",nombreJugadorA+' y '+nombreJugadorB,numJugadasA);
 		}
 	}
